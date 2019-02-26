@@ -15,6 +15,7 @@ public class ActiveTopicProducer {
     
     // 发送消息，destination是发送到的队列，message是待发送的消息
     public void sendMessage(Destination destination, final String message){
+    	System.out.println("------------------------------------------------------------------");
         jmsTemplate.convertAndSend(destination, message);
     }
 
