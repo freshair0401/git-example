@@ -12,14 +12,14 @@ import org.springframework.stereotype.Component;
 import javax.jms.Destination;
 
 @Component
-@EnableScheduling
+// @EnableScheduling
 public class ActiveMQSchedul {
 
 	@Autowired 
     private JmsMessagingTemplate jmsTemplate;
 
     // 发送消息
-    @Scheduled(fixedDelay = 5000)
+    // @Scheduled(fixedDelay = 5000)
     public void sendMessage(){
         Destination destination = new ActiveMQTopic("VirtualTopic.eventA");
         AcXqcFreezing freezing = new AcXqcFreezing();

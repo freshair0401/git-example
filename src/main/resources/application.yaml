@@ -6,7 +6,19 @@ spring:
     user: maxinbo
     password: maxinbo123
     broker-url: failover:(tcp://172.16.1.129:61616,tcp://172.16.1.102:61616,tcp://172.16.1.117:61616)
+    #发送对象要设置白名单，trust-all为全部设置白名单
     packages:
       trust-all: true
     pool:
-      enabled: false
+      enabled: true
+      max-connections: 10
+    #开启持久化需关闭此项
+    in-memory: false
+    #spring.jms.listener.acknowledge-mode=
+
+activemq:
+  main-thread:
+    topic-group-order: order
+    topic-group-fund: fund
+    topic-order: fuli_order
+    topic-fund: fuli_fund
