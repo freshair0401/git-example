@@ -1,0 +1,12 @@
+server:
+  port: 8090
+
+spring:
+  activemq:
+    user: maxinbo
+    password: maxinbo123
+    broker-url: failover:(tcp://172.16.1.129:61616,tcp://172.16.1.102:61616,tcp://172.16.1.117:61616)
+    packages:
+      trust-all: true
+    pool:
+      enabled: false
